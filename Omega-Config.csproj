@@ -2,7 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <RootNamespace>Omega_Config</RootNamespace>
+    <RootNamespace>OmegaConfig</RootNamespace>
+    <CodeAnalysisRuleSet>AllRulesEnabled.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>
