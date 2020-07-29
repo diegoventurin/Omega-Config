@@ -1,10 +1,9 @@
 using System;
-using System.Text.Json;
 
 namespace OmegaConfig.Core
 {
     /// <summary>
-    /// An article, It can be configurable or not.
+    /// An article. It can be configurable or not.
     /// </summary>
     public class Article
     {
@@ -13,7 +12,7 @@ namespace OmegaConfig.Core
 
         private Schema _schema;
         private bool _configurable;
-        private JsonDocument _currentConfiguration;
+        private string _currentConfiguration;
 
         private Collection _collection;
         private string _class1;
@@ -27,8 +26,30 @@ namespace OmegaConfig.Core
         private double _height;
         private double _weight;
 
+        ///<summary>
+        /// Create a non-configurable article.
+        ///</summary>
+        ///<param name="code">The identifier code of the article.</param>
+        public Article(string code)
+        {
+            this._code = code;
+            this._configurable = false;
+            this._schema = null;
+            SetDefaultValues();
+        }
 
-        // properties
+        ///<summary>
+        /// Create a configurable article.
+        ///</summary>
+        ///<param name="code">The identifier code of the article.</param>
+        ///<param name="schema">The schema of the configuration properties.</param>
+        public Article(string code, Schema schema)
+        {
+            this._code = code;
+            this._schema = schema;
+            this._configurable = true;
+            SetDefaultValues();
+        }
 
         /// <value>Gets the article code.</value>
         public string Code { get => _code;}
@@ -41,7 +62,7 @@ namespace OmegaConfig.Core
         }
 
         /// <value>Gets or sets the current configuration.</value>
-        public JsonDocument CurrentConfiguration
+        public string CurrentConfiguration
         {
             get => _currentConfiguration;
             set => _currentConfiguration = value;
@@ -121,32 +142,6 @@ namespace OmegaConfig.Core
             }
         }
 
-        // contructors
-
-        ///<summary>
-        /// Create a non-configurable article.
-        ///</summary>
-        ///<param name="code">The identifier code of the article.</param>
-        public Article(string code)
-        {
-            this._code = code;
-            this._configurable = false;
-        }
-
-        ///<summary>
-        /// Create a configurable article.
-        ///</summary>
-        ///<param name="code">The identifier code of the article.</param>
-        ///<param name="schema">The schema of the configuration properties.</param>
-        public Article(string code, Schema schema)
-        {
-            this._code = code;
-            this._schema = schema;
-            this._configurable = true;
-        }
-
-        // methods
-
         ///<summary>
         /// Sets the article as configurable.
         ///</summary>
@@ -183,6 +178,27 @@ namespace OmegaConfig.Core
             this._class3 = c3;
             this._class4 = c4;
             this._class5 = c5;
+        }
+
+        ///<summary>
+        /// Set the default value for article.
+        /// Used only by constructors.
+        ///</summary>
+        private void SetDefaultValues()
+        {
+            _currentConfiguration = "{}";
+
+            _collection = null;
+            _class1 = "";
+            _class2 = "";
+            _class3 = "";
+            _class4 = "";
+            _class5 = "";
+            _lenght = 0;
+            _width = 0;
+            _height = 0;
+            _weight = 0;
+
         }
 
 
