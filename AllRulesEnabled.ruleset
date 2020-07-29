@@ -213,4 +213,24 @@
       <Rule Id="CA5403" Action="Warning" />          <!-- Do not hard-code certificate -->
       <Rule Id="CA9999" Action="Warning" />          <!-- Analyzer version mismatch -->
    </Rules>
+   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+      <Rule Id="SA1201" Action="Warning" />          <!-- Elements Must Appear In The Correct Order -->
+      <Rule Id="SA1202" Action="Warning" />          <!-- Elements Must Be Ordered By Access -->
+      <Rule Id="SA1203" Action="Warning" />          <!-- Constants Must Appear Before Fields -->
+      <Rule Id="SA1204" Action="Warning" />          <!-- Static Elements Must Appear Before Instance Elements -->
+      <Rule Id="SA1205" Action="Warning" />          <!-- Partial Elements Must Declare Access -->
+      <Rule Id="SA1206" Action="Warning" />          <!-- Declaration Keywords Must Follow Order -->
+      <Rule Id="SA1207" Action="Warning" />          <!-- Protected Must Come Before Internal -->
+      <Rule Id="SA1208" Action="Warning" />          <!-- System Using Directives Must Be Placed Before Other Using Directives -->
+      <Rule Id="SA1209" Action="Warning" />          <!-- Using Alias Directives Must Be Placed After Other Using Directives -->
+      <Rule Id="SA1210" Action="Warning" />          <!-- Using Directives Must Be Ordered Alphabetically By Namespace -->
+      <Rule Id="SA1211" Action="Warning" />          <!-- Using Alias Directives Must Be Ordered Alphabetically By AliasName -->
+      <Rule Id="SA1212" Action="Warning" />          <!-- Property Accessors Must Follow Order -->
+      <Rule Id="SA1213" Action="Warning" />          <!-- Event Accessors Must Follow Order -->
+      <Rule Id="SA1214" Action="Warning" />          <!-- Readonly Elements Must Appear Before Non Readonly Elements -->
+      <Rule Id="SA1215" Action="Warning" />          <!-- Instance Readonly Elements Must Appear Before Instance Non Readonly Elements -->
+      <Rule Id="SA1216" Action="Warning" />          <!-- Using Static Directives Must Be Placed At The Correct Location  -->
+      <Rule Id="SA1217" Action="Warning" />          <!-- Using Static Directives Must Be Ordered Alphabetically  -->
+   </Rules>
 </RuleSet>
+
