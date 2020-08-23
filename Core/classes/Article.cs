@@ -17,7 +17,7 @@ namespace OmegaConfig.Core
         private bool _configurable;
         private string _currentConfiguration;
 
-        private Collection _collection;
+        private string _series;
         private string _class1;
         private string _class2;
         private string _class3;
@@ -58,10 +58,10 @@ namespace OmegaConfig.Core
         public string Code { get => _code;}
 
         /// <value>Gets or sets the collection.</value>
-        public Collection Collection
+        public string Series
         {
-            get => _collection;
-            set => _collection = value;
+            get => _series;
+            set => _series = value;
         }
 
         /// <value>Gets or sets the current configuration.</value>
@@ -211,7 +211,7 @@ namespace OmegaConfig.Core
         {
             _currentConfiguration = "{}";
 
-            _collection = null;
+            _series = "";
             _class1 = "";
             _class2 = "";
             _class3 = "";
