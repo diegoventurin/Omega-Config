@@ -1,4 +1,7 @@
 using System;
+using System.Reflection;
+using System.Resources;
+using System.Threading;
 
 namespace OmegaConfig.Core
 {
@@ -8,7 +11,7 @@ namespace OmegaConfig.Core
     public class Article
     {
         // private fields
-        private string _code;
+        private readonly string _code;
 
         private Schema _schema;
         private bool _configurable;
@@ -26,10 +29,10 @@ namespace OmegaConfig.Core
         private double _height;
         private double _weight;
 
-        ///<summary>
+        /// <summary>
         /// Create a non-configurable article.
-        ///</summary>
-        ///<param name="code">The identifier code of the article.</param>
+        /// </summary>
+        /// <param name="code">The identifier code of the article.</param>
         public Article(string code)
         {
             this._code = code;
@@ -38,11 +41,11 @@ namespace OmegaConfig.Core
             SetDefaultValues();
         }
 
-        ///<summary>
+        /// <summary>
         /// Create a configurable article.
-        ///</summary>
-        ///<param name="code">The identifier code of the article.</param>
-        ///<param name="schema">The schema of the configuration properties.</param>
+        /// </summary>
+        /// <param name="code">The identifier code of the article.</param>
+        /// <param name="schema">The schema of the configuration properties.</param>
         public Article(string code, Schema schema)
         {
             this._code = code;
@@ -68,13 +71,20 @@ namespace OmegaConfig.Core
             set => _currentConfiguration = value;
         }
 
-        /// <value>Get the classification strings.</value>
-        public string[] Classification
+        /// <value>Gets or sets the current configuration.</value>
+        public Schema Schema
         {
-            get => new string[] {_class1, _class2, _class3, _class4, _class5};
+            get => _schema;
         }
-        
+
+        /// <value>Get the classification strings.</value>
+        public string[] GetClassification()
+        {
+            return new string[] {_class1, _class2, _class3, _class4, _class5};
+        }
+
         /// <value>Gets or sets the lenght. Value must be 0 or positive.</value>
+        /// <exception cref="System.ArgumentOutOfRangeException">Thrown when value is less than zero.</exception>
         public double Lenght
         {
             get => _lenght;
@@ -86,7 +96,8 @@ namespace OmegaConfig.Core
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException();
+                    var resourceManager = new ResourceManager("Resources.ExceptionMessages", Assembly.GetExecutingAssembly());
+                    throw new ArgumentOutOfRangeException(value.ToString(Thread.CurrentThread.CurrentCulture), resourceManager.GetString("ValueMustBeEqualOrGreaterThanZero", Thread.CurrentThread.CurrentCulture));
                 }
             }
         }
@@ -103,7 +114,8 @@ namespace OmegaConfig.Core
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException();
+                    var resourceManager = new ResourceManager("Resources.ExceptionMessages", Assembly.GetExecutingAssembly());
+                    throw new ArgumentOutOfRangeException(value.ToString(Thread.CurrentThread.CurrentCulture), resourceManager.GetString("ValueMustBeEqualOrGreaterThanZero", Thread.CurrentThread.CurrentCulture));
                 }
             }
         }
@@ -120,7 +132,8 @@ namespace OmegaConfig.Core
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException();
+                    var resourceManager = new ResourceManager("Resources.ExceptionMessages", Assembly.GetExecutingAssembly());
+                    throw new ArgumentOutOfRangeException(value.ToString(Thread.CurrentThread.CurrentCulture), resourceManager.GetString("ValueMustBeEqualOrGreaterThanZero", Thread.CurrentThread.CurrentCulture));
                 }
             }
         }
@@ -137,40 +150,50 @@ namespace OmegaConfig.Core
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException();
+                    var resourceManager = new ResourceManager("Resources.ExceptionMessages", Assembly.GetExecutingAssembly());
+                    throw new ArgumentOutOfRangeException(value.ToString(Thread.CurrentThread.CurrentCulture), resourceManager.GetString("ValueMustBeEqualOrGreaterThanZero", Thread.CurrentThread.CurrentCulture));
                 }
             }
         }
 
-        ///<summary>
+        /// <summary>
         /// Sets the article as configurable.
-        ///</summary>
-        ///<param name="schema">The schema used for configuration.</param>
+        /// </summary>
+        /// <param name="schema">The schema used for configuration.</param>
         public void SetConfigurable(Schema schema)
         {
             this._configurable = true;
             this._schema = schema;
         }
 
-        ///<summary>
+        /// <summary>
+        /// Sets the article as configurable.
+        /// </summary>
+        /// <param name="schema">The schema used for configuration.</param>
+        public bool IsConfigurable()
+        {
+            return _configurable;
+        }
+
+        /// <summary>
         /// Sets the article as non-configurable.
-        ///</summary>
-        ///<param name="schema">The schema used for configuration.</param>
+        /// </summary>
+        /// <param name="schema">The schema used for configuration.</param>
         public void SetNotConfigurable()
         {
             this._configurable = false;
             this._schema = null;
         }
 
-        ///<summary>
+        /// <summary>
         /// Add classification fields to article.
         /// Can be used only for statistics.
-        ///</summary>
-        ///<param name="c1">First classificantion parameter (mandatory).</param>
-        ///<param name="c2">Second classificantion parameter (optional).</param>
-        ///<param name="c3">Third classificantion parameter (optional).</param>
-        ///<param name="c4">Forth classificantion parameter (optional).</param>
-        ///<param name="c5">Fifth classificantion parameter (optional).</param>
+        /// </summary>
+        /// <param name="c1">First classificantion parameter (mandatory).</param>
+        /// <param name="c2">Second classificantion parameter (optional).</param>
+        /// <param name="c3">Third classificantion parameter (optional).</param>
+        /// <param name="c4">Forth classificantion parameter (optional).</param>
+        /// <param name="c5">Fifth classificantion parameter (optional).</param>
         public void AddClassification(string c1, string c2 = "", string c3 = "", string c4 = "", string c5 = "")
         {
             this._class1 = c1;
@@ -180,10 +203,10 @@ namespace OmegaConfig.Core
             this._class5 = c5;
         }
 
-        ///<summary>
+        /// <summary>
         /// Set the default value for article.
         /// Used only by constructors.
-        ///</summary>
+        /// </summary>
         private void SetDefaultValues()
         {
             _currentConfiguration = "{}";
