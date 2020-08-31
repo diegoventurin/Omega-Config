@@ -61,6 +61,33 @@ namespace OmegaConfig.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Property name is already used..
+        /// </summary>
+        internal static string DuplicatedPropertyName {
+            get {
+                return ResourceManager.GetString("DuplicatedPropertyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sequence is already used..
+        /// </summary>
+        internal static string DuplicatedSequence {
+            get {
+                return ResourceManager.GetString("DuplicatedSequence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Property can&apos;t be null..
+        /// </summary>
+        internal static string PropertyIsNull {
+            get {
+                return ResourceManager.GetString("PropertyIsNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Value must be equal to or greater than zero..
         /// </summary>
         internal static string ValueMustBeEqualOrGreaterThanZero {
