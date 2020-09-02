@@ -7,12 +7,10 @@ namespace OmegaConfig.Core
     /// <summary>
     /// A property of an article, belonging to a schema.
     /// </summary>
-    public class Property
+    public class IntegerProperty : GenericProperty
     {
-        private string _name;
-        
 
-        
+
 
     }
     

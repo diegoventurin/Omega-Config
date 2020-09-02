@@ -16,7 +16,7 @@ namespace OmegaConfig.Core
     public class Schema
     {
         private readonly string _name;
-        private readonly SortedList<short, PropertyG> _properties;
+        private readonly SortedList<short, GenericProperty> _properties;
 
         /// <summary>
         /// Create a new schema.
@@ -25,7 +25,7 @@ namespace OmegaConfig.Core
         public Schema(string name)
         {
             _name = name;
-            _properties = new SortedList<short, PropertyG>();    
+            _properties = new SortedList<short, GenericProperty>();    
         }
 
         /// <value>Gets the name of the schema.</value>
@@ -41,7 +41,7 @@ namespace OmegaConfig.Core
         /// <value>Add a new property to the schema.</value>
         /// <exception cref="System.ArgumentException">Sequence or property name area already used.</exception>
         /// <exception cref="System.NullReferenceException">Property is null.</exception>
-        public void AddProperty(short sequence, PropertyG property)
+        public void AddProperty(short sequence, GenericProperty property)
         {
             if (property is null)
             {
@@ -52,7 +52,7 @@ namespace OmegaConfig.Core
             if (_properties.ContainsKey(sequence))
             {
                 bool found = false;
-                foreach (PropertyG prop in _properties.Values)
+                foreach (GenericProperty prop in _properties.Values)
                 {
                     if (prop.Name == property.Name)
                     {
