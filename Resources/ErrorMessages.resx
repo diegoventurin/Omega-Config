@@ -126,10 +126,22 @@
   <data name="PropertyIsNull" xml:space="preserve">
     <value>Property can't be null.</value>
   </data>
+  <data name="ValueHigherThanUpperBound" xml:space="preserve">
+    <value>Value is higher than upper bound.</value>
+  </data>
+  <data name="ValueIncompatibleWithSetValues" xml:space="preserve">
+    <value>Value is incompatible with current value or default value.</value>
+  </data>
+  <data name="ValueLowerThanLowerBound" xml:space="preserve">
+    <value>Value is lower than lower bound.</value>
+  </data>
   <data name="ValueMustBeEqualOrGreaterThanZero" xml:space="preserve">
     <value>Value must be equal to or greater than zero.</value>
   </data>
   <data name="ValueMustBeGreaterThanZero" xml:space="preserve">
     <value>Value must be greater than zero.</value>
+  </data>
+  <data name="ValueOutOfBounds" xml:space="preserve">
+    <value>Value is outside the bounds.</value>
   </data>
 </root>

@@ -88,6 +88,33 @@ namespace OmegaConfig.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Value is higher than upper bound..
+        /// </summary>
+        internal static string ValueHigherThanUpperBound {
+            get {
+                return ResourceManager.GetString("ValueHigherThanUpperBound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value is incompatible with current value or default value..
+        /// </summary>
+        internal static string ValueIncompatibleWithSetValues {
+            get {
+                return ResourceManager.GetString("ValueIncompatibleWithSetValues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value is lower than lower bound..
+        /// </summary>
+        internal static string ValueLowerThanLowerBound {
+            get {
+                return ResourceManager.GetString("ValueLowerThanLowerBound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Value must be equal to or greater than zero..
         /// </summary>
         internal static string ValueMustBeEqualOrGreaterThanZero {
@@ -102,6 +129,15 @@ namespace OmegaConfig.Resources {
         internal static string ValueMustBeGreaterThanZero {
             get {
                 return ResourceManager.GetString("ValueMustBeGreaterThanZero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value is outside the bounds..
+        /// </summary>
+        internal static string ValueOutOfBounds {
+            get {
+                return ResourceManager.GetString("ValueOutOfBounds", resourceCulture);
             }
         }
     }
