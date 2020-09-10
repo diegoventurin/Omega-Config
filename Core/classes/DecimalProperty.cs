@@ -21,7 +21,7 @@ namespace OmegaConfig.Core
         private bool _required;
 
         /// <summary>
-        /// Create a new property of integer type.
+        /// Create a new property of decimal type.
         /// </summary>
         /// <param name="name">The identifier name of the property.</param>
         public DecimalProperty(string name)
