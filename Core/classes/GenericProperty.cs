@@ -9,17 +9,7 @@ namespace OmegaConfig.Core
     /// </summary>
     public class GenericProperty
     {
-        private readonly string _name;
 
-        /// <value>Gets the name of the property.</value>
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-
-        }
 
 
     }
