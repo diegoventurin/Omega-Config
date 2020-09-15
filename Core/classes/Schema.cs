@@ -15,6 +15,8 @@ namespace OmegaConfig.Core
     /// </summary>
     public class Schema
     {
+
+        // private fields
         private readonly string _name;
         private readonly SortedList<short, GenericProperty> _properties;
 

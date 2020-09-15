@@ -34,7 +34,7 @@ namespace OmegaConfig.Core
         }
 
         /// <value>Gets the name of the property.</value>
-        public string Name
+        public override string Name
         {
             get
             {
