@@ -174,6 +174,21 @@ namespace OmegaConfig.Core
             this._currentText = _defaultText;
         }
 
+        /// <summary>
+        /// Create a string with the name of the property and its value, separeted by a colon.
+        /// </summary>
+        public override string ToString()
+        {
+            return $"{_name}: {_currentText}";
+        }
+
+        /// <summary>
+        /// Create a string with the name of the property and its value, in JSON format.
+        /// </summary>
+        public string ToJSON()
+        {
+            return $"\"{_name}\": \"{_currentText}\"";
+        }
 
     }
 
