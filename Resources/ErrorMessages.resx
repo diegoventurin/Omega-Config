@@ -126,6 +126,9 @@
   <data name="PropertyIsNull" xml:space="preserve">
     <value>Property can't be null.</value>
   </data>
+  <data name="PropertyValueNotFound" xml:space="preserve">
+    <value>Property value doesn't belong to the property.</value>
+  </data>
   <data name="ValueHigherThanUpperBound" xml:space="preserve">
     <value>Value is higher than upper bound.</value>
   </data>
@@ -140,6 +143,9 @@
   </data>
   <data name="ValueMustBeGreaterThanZero" xml:space="preserve">
     <value>Value must be greater than zero.</value>
+  </data>
+  <data name="ValueNotValid" xml:space="preserve">
+    <value>Value is not a valid.</value>
   </data>
   <data name="ValueOutOfBounds" xml:space="preserve">
     <value>Value is outside the bounds.</value>

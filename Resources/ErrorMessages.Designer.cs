@@ -88,6 +88,15 @@ namespace OmegaConfig.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Property value doesn&apos;t belong to the property..
+        /// </summary>
+        internal static string PropertyValueNotFound {
+            get {
+                return ResourceManager.GetString("PropertyValueNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Value is higher than upper bound..
         /// </summary>
         internal static string ValueHigherThanUpperBound {
@@ -129,6 +138,15 @@ namespace OmegaConfig.Resources {
         internal static string ValueMustBeGreaterThanZero {
             get {
                 return ResourceManager.GetString("ValueMustBeGreaterThanZero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value is not a valid..
+        /// </summary>
+        internal static string ValueNotValid {
+            get {
+                return ResourceManager.GetString("ValueNotValid", resourceCulture);
             }
         }
         

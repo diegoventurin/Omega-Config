@@ -27,9 +27,8 @@ namespace OmegaConfig.Core
         /// Create a new value for a property.
         /// </summary>
         /// <param name="name">The identifier name of the property.</param>
-        public PropertyValue(string name)
+        public PropertyValue(string name) : this(name, "")
         {
-            this._name = name;
         }
 
         /// <value>Gets the name of the property.</value>
