@@ -41,7 +41,7 @@ namespace OmegaConfig.Core
         }
 
         /// <value>Add a new property to the schema.</value>
-        /// <exception cref="System.ArgumentException">Sequence or property name area already used.</exception>
+        /// <exception cref="System.ArgumentException">Sequence or property name are already used.</exception>
         /// <exception cref="System.NullReferenceException">Property is null.</exception>
         public void AddProperty(short sequence, GenericProperty property)
         {
