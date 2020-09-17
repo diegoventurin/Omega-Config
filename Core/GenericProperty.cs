@@ -10,6 +10,7 @@ namespace OmegaConfig.Core
     public abstract class GenericProperty
     {
         public abstract string Name { get; }
+        public abstract string Description { set;  get; }
 
 
     }

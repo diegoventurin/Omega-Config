@@ -14,6 +14,7 @@ namespace OmegaConfig.Core
 
         // private fields
         private readonly string _name;
+        private string _description;
         private double _defaultValue;
         private double _currentValue;
         private double _upperBound;
@@ -24,14 +25,24 @@ namespace OmegaConfig.Core
         /// Create a new property of decimal type.
         /// </summary>
         /// <param name="name">The identifier name of the property.</param>
-        public DecimalProperty(string name)
+        /// <param name="description">A culture indipendent decription of the property.</param>
+        public DecimalProperty(string name, string description)
         {
             this._name = name;
+            this._description = description;
             this._lowerBound = Double.MinValue;
             this._upperBound = Double.MaxValue;
             this._defaultValue = 0;
             this._currentValue = 0;
             this._required = false;
+        }
+
+        /// <summary>
+        /// Create a new property of decimal type.
+        /// </summary>
+        /// <param name="name">The identifier name of the property.</param>
+        public DecimalProperty(string name) : this(name, "")
+        {
         }
 
         /// <value>Gets the name of the property.</value>
@@ -40,6 +51,20 @@ namespace OmegaConfig.Core
             get
             {
                 return _name;
+            }
+
+        }
+
+        /// <value>Gets the name of the description.</value>
+        public override string Description
+        {
+            set
+            {
+                this._description = value;
+            }
+            get
+            {
+                return _description;
             }
 
         }

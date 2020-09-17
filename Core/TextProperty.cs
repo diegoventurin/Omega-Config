@@ -14,6 +14,7 @@ namespace OmegaConfig.Core
 
         // private fields
         private readonly string _name;
+        private string _description;
         private string _defaultText;
         private string _currentText;
         private int _maxLenght;
@@ -24,12 +25,22 @@ namespace OmegaConfig.Core
         /// Create a new property of text type.
         /// </summary>
         /// <param name="name">The identifier name of the property.</param>
-        public TextProperty(string name)
+        /// <param name="description">A culture indipendent decription of the property.</param>
+        public TextProperty(string name, string description)
         {
             this._name = name;
+            this._description = description;
             this._required = false;
             this._defaultText = "";
             this._currentText = "";
+        }
+
+        /// <summary>
+        /// Create a new property of text type.
+        /// </summary>
+        /// <param name="name">The identifier name of the property.</param>
+        public TextProperty(string name) : this(name, "")
+        {
         }
 
         /// <value>Gets the name of the property.</value>
@@ -38,6 +49,20 @@ namespace OmegaConfig.Core
             get
             {
                 return _name;
+            }
+
+        }
+
+        /// <value>Gets the name of the description.</value>
+        public override string Description
+        {
+            set
+            {
+                this._description = value;
+            }
+            get
+            {
+                return _description;
             }
 
         }
