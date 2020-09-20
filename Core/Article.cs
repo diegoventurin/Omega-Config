@@ -13,7 +13,7 @@ namespace OmegaConfig.Core
         // private fields
         private readonly string _code;
 
-        private Schema _schema;
+        private ArtSchema _schema;
         private bool _configurable;
         private string _currentConfiguration;
 
@@ -46,7 +46,7 @@ namespace OmegaConfig.Core
         /// </summary>
         /// <param name="code">The identifier code of the article.</param>
         /// <param name="schema">The schema of the configuration properties.</param>
-        public Article(string code, Schema schema)
+        public Article(string code, ArtSchema schema)
         {
             this._code = code;
             this._schema = schema;
@@ -72,7 +72,7 @@ namespace OmegaConfig.Core
         }
 
         /// <value>Gets or sets the current configuration.</value>
-        public Schema Schema
+        public ArtSchema Schema
         {
             get => _schema;
         }
@@ -160,7 +160,7 @@ namespace OmegaConfig.Core
         /// Sets the article as configurable.
         /// </summary>
         /// <param name="schema">The schema used for configuration.</param>
-        public void SetConfigurable(Schema schema)
+        public void SetConfigurable(ArtSchema schema)
         {
             this._configurable = true;
             this._schema = schema;

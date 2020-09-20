@@ -13,7 +13,7 @@ namespace OmegaConfig.Core
     /// A schema that contains the properties and rules for a configurable article.
     /// Schema is mandatory for configurable articles.
     /// </summary>
-    public class Schema
+    public class ArtSchema
     {
 
         // private fields
@@ -24,7 +24,7 @@ namespace OmegaConfig.Core
         /// Create a new schema.
         /// </summary>
         /// <param name="name">The name of the schema.</param>
-        public Schema(string name)
+        public ArtSchema(string name)
         {
             _name = name;
             _properties = new SortedList<short, GenericProperty>();    
