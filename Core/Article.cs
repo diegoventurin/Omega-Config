@@ -15,7 +15,6 @@ namespace OmegaConfig.Core
 
         private ArtSchema _schema;
         private bool _configurable;
-        private string _currentConfiguration;
 
         private string _series;
         private string _class1;
@@ -62,13 +61,6 @@ namespace OmegaConfig.Core
         {
             get => _series;
             set => _series = value;
-        }
-
-        /// <value>Gets or sets the current configuration.</value>
-        public string CurrentConfiguration
-        {
-            get => _currentConfiguration;
-            set => _currentConfiguration = value;
         }
 
         /// <value>Gets or sets the current configuration.</value>
@@ -209,7 +201,6 @@ namespace OmegaConfig.Core
         /// </summary>
         private void SetDefaultValues()
         {
-            _currentConfiguration = "{}";
 
             _series = "";
             _class1 = "";
