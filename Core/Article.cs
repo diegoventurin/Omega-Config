@@ -63,7 +63,7 @@ namespace OmegaConfig.Core
             set => _series = value;
         }
 
-        /// <value>Gets or sets the current configuration.</value>
+        /// <value>Gets the schema.</value>
         public ArtSchema Schema
         {
             get => _schema;
@@ -95,6 +95,7 @@ namespace OmegaConfig.Core
         }
 
         /// <value>Gets or sets the width. Value must be 0 or positive.</value>
+        /// <exception cref="System.ArgumentOutOfRangeException">Thrown when value is less than zero.</exception>
         public double Width
         {
             get => _width;
@@ -113,6 +114,7 @@ namespace OmegaConfig.Core
         }
 
         /// <value>Gets or sets the height. Value must be 0 or positive./value>
+        /// <exception cref="System.ArgumentOutOfRangeException">Thrown when value is less than zero.</exception>
         public double Height
         {
             get => _height;
@@ -131,6 +133,7 @@ namespace OmegaConfig.Core
         }
 
         /// <value>Gets or sets the weight. Value must be 0 or positive.</value>
+        /// <exception cref="System.ArgumentOutOfRangeException">Thrown when value is less than zero.</exception>
         public double Weight
         {
             get => _weight;
