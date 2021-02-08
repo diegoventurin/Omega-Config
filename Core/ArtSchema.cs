@@ -33,10 +33,7 @@ namespace OmegaConfig.Core
         /// <value>Gets the name of the schema.</value>
         public string Name
         {
-            get
-            {
-                return _name;
-            }
+            get => _name;
 
         }
 
